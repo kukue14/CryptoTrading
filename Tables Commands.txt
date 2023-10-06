@@ -1,0 +1,6 @@
+// Creation of history table
+create table history (history_id int primary key, id int, Receiver varchar(100), sender varchar(100), Transaction_date Date, Transaction_time Time, transfer_crypto_amount Decimal(20,10), cost decimal(15,5), foreign key (id) references user_info(id));
+
+// Creation of user_info table 
+create table user_info (id int auto_increment, realname varchar(100), username varchar(50) unique, email varchar(100) unique, phone_no varchar(20) unique
+, DOB date, password varchar(50) not null, balance decimal(20,5) default 0.0, crypto_amount decimal(20,10) default 0.0, primary key (id));
